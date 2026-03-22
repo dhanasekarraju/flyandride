@@ -83,10 +83,10 @@ const Contact = () => {
             <div className="social-connect">
               <h3>Follow Us</h3>
               <div className="social-links">
-                <a href="#" className="social-link"><i className="fab fa-facebook-f"></i></a>
-                <a href="#" className="social-link"><i className="fab fa-instagram"></i></a>
-                <a href="#" className="social-link"><i className="fab fa-youtube"></i></a>
-                <a href="#" className="social-link"><i className="fab fa-strava"></i></a>
+                <a href="/" className="social-link"><i className="fab fa-facebook-f"></i></a>
+                <a href="/" className="social-link"><i className="fab fa-instagram"></i></a>
+                <a href="/" className="social-link"><i className="fab fa-youtube"></i></a>
+                <a href="/" className="social-link"><i className="fab fa-strava"></i></a>
               </div>
             </div>
           </div>
