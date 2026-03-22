@@ -1,0 +1,70 @@
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff6b4a, #4a90e2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.bicycle-loader {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.wheel {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 4px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.wheel.front {
+  right: 0;
+  bottom: 0;
+}
+
+.wheel.rear {
+  left: 0;
+  bottom: 0;
+}
+
+.wheel::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.frame {
+  position: absolute;
+  width: 120px;
+  height: 60px;
+  border: 4px solid white;
+  border-top: none;
+  border-right: none;
+  top: 40px;
+  left: 30px;
+  transform: skewX(-20deg);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

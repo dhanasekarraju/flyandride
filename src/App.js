@@ -1,24 +1,48 @@
-import logo from './logo.svg';
+// App.js
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import './App.css';
+import Home from './components/Home';
+import About from './components/About';
+import Achievements from './components/Achievements';
+import Gallery from './components/Gallery';
+import Contact from './components/Contact';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Loader from './components/Loader';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 2000);
+  }, []);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className={`app ${theme}`} data-theme={theme}>
+        <Navbar theme={theme} toggleTheme={toggleTheme} />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/achievements" element={<Achievements />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
