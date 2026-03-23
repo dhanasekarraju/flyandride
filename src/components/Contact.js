@@ -146,7 +146,7 @@ const Contact = () => {
         {/* Map Section */}
         <div className="map-section scale-in">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0230161515105!2d80.25386031461197!3d12.970378990856618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d404b080fcd%3A0x24e27b6437ffd61e!2s1%2F456%2C%20Anna%20St%2C%20Valmiki%20Nagar%2C%20Swaminathan%20Nagar%2C%20Kottivakkam%2C%20Chennai%2C%20Tamil%20Nadu%20600041!5e0!3m2!1sen!2sin!4v1681668915330!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d971.5262397046938!2d80.17756771962404!3d13.092534105445726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5263f0422dd895%3A0x5fff908f87307fa0!2sSathya%20Nagar%2C%20Padi%2C%20Chennai%2C%20Tamil%20Nadu%20600050!5e0!3m2!1sen!2sin!4v1774258459432!5m2!1sen!2sin"
             title="Location Map"
             allowFullScreen=""
             loading="lazy"
