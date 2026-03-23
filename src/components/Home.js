@@ -44,22 +44,25 @@ const Home = () => {
 
   const highlights = [
     {
+      title: 'Singapore to Malaysia Coastal Expedition',
+      date: 'December 15-20, 2024',
+      description: 'Ride across borders - Singapore → Johor → Malacca → Port Dickson → KL City. Join the ultimate international cycling expedition!',
+      image: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      link: '/expedition'
+    },
+    {
       title: 'Cauvery River Trail Ride',
       date: '24th - 26th January 2026',
       description: 'Explore the ancient heritage along the Cauvery river with 40+ cyclists',
-      image: 'https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+      image: 'https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      link: '/gallery'
     },
     {
       title: 'Bali International Tour',
       date: '11th - 16th September 2025',
       description: 'Experience the fusion of Balinese and Indian heritage',
-      image: 'https://images.unsplash.com/photo-1539367625300-6162c8a5c4c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
-    },
-    {
-      title: 'Sri Lanka Cycling Tour',
-      date: 'Ponniyin Selvan Trail',
-      description: 'Ride through the ancient cities of Anuradhapura and Polonnaruwa',
-      image: 'https://images.unsplash.com/photo-1556304653-cba65c59b3c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+      image: 'https://images.unsplash.com/photo-1539367625300-6162c8a5c4c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      link: '/gallery'
     }
   ];
 

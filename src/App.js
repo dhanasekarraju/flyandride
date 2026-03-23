@@ -6,6 +6,7 @@ import About from './components/About';
 import Achievements from './components/Achievements';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
+import Expedition from './components/Expedition';  // Add this import
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Loader from './components/Loader';
@@ -27,21 +28,22 @@ function App() {
   }
 
   return (
-    <Router>
-      <div className={`app ${theme}`} data-theme={theme}>
-        <Navbar theme={theme} toggleTheme={toggleTheme} />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/achievements" element={<Achievements />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+      <Router>
+        <div className={`app ${theme}`} data-theme={theme}>
+          <Navbar theme={theme} toggleTheme={toggleTheme} />
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/expedition" element={<Expedition />} />  {/* Add this route */}
+              <Route path="/achievements" element={<Achievements />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
   );
 }
 
