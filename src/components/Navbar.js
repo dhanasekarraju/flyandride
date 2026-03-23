@@ -22,7 +22,7 @@ const Navbar = ({ theme, toggleTheme }) => {
   const navLinks = [
     { path: '/', name: 'Home' },
     { path: '/about', name: 'About Us' },
-    { path: '/expedition', name: 'Expedition' },
+    { path: '/tours', name: 'Tours' },
     { path: '/achievements', name: 'Achievements' },
     { path: '/gallery', name: 'Gallery' },
     { path: '/contact', name: 'Contact' },

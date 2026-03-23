@@ -27,15 +27,6 @@ const Expedition = () => {
     }
   ];
 
-  const routeHighlights = [
-    { name: "Singapore", desc: "Start your journey", icon: "fas fa-city" },
-    { name: "Johor", desc: "Cross the border", icon: "fas fa-passport" },
-    { name: "Malacca", desc: "Historic UNESCO heritage", icon: "fas fa-landmark" },
-    { name: "Port Dickson", desc: "Beautiful beachfront", icon: "fas fa-umbrella-beach" },
-    { name: "KL City", desc: "Urban adventure", icon: "fas fa-building" },
-    { name: "Lekas Highway", desc: "Challenging ride", icon: "fas fa-mountain" }
-  ];
-
   const inclusions = [
     "Airport transfers",
     "Hotel accommodation",
@@ -44,6 +35,30 @@ const Expedition = () => {
     "Nutrition & hydration support",
     "Border crossing assistance",
     "Local cycling coordination"
+  ];
+
+  const whySpecial = [
+    "Cross-country cycling experience",
+    "Ride with international cyclists",
+    "Ideal for endurance riders",
+    "Safe and professionally managed",
+    "Limited slots"
+  ];
+
+  const whoShouldJoin = [
+    "Cycling clubs",
+    "Audax riders",
+    "Adventure travelers",
+    "First-time international riders"
+  ];
+
+  const routeStops = [
+    { name: "Singapore", desc: "Start your journey with world-class cycling infrastructure", km: "0 km" },
+    { name: "Johor", desc: "Cross the border into Malaysia's southern gateway", km: "35 km" },
+    { name: "Malacca", desc: "UNESCO World Heritage city with rich colonial history", km: "210 km" },
+    { name: "Port Dickson", desc: "Beautiful beachfront roads and coastal views", km: "90 km" },
+    { name: "KL City", desc: "Urban adventure through Malaysia's vibrant capital", km: "100 km" },
+    { name: "Lekas Highway", desc: "Challenging climbs and breathtaking mountain views", km: "50 km" }
   ];
 
   return (
@@ -93,6 +108,34 @@ const Expedition = () => {
         </div>
       </section>
 
+      {/* Canon Section - Tour Details Card */}
+      <section className="canon-section">
+        <div className="container">
+          <div className="canon-grid">
+            <div className="canon-card">
+              <i className="fas fa-calendar-alt"></i>
+              <h3>Dates</h3>
+              <p>December 15–20, 2024</p>
+            </div>
+            <div className="canon-card">
+              <i className="fas fa-clock"></i>
+              <h3>Duration</h3>
+              <p>6 Days / 5 Nights</p>
+            </div>
+            <div className="canon-card">
+              <i className="fas fa-route"></i>
+              <h3>Distance</h3>
+              <p>450+ km</p>
+            </div>
+            <div className="canon-card">
+              <i className="fas fa-chart-line"></i>
+              <h3>Difficulty</h3>
+              <p>Moderate to Challenging</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Experience Section */}
       <section className="experience-section">
         <div className="container">
@@ -105,11 +148,53 @@ const Expedition = () => {
           </div>
           
           <div className="experience-content">
-            <div className="experience-text slide-in-left">
+            <div className="experience-text">
               <p>Ride through Singapore's cycling infrastructure, cross into Malaysia, enjoy coastal highways, and experience new cultures and cycling communities.</p>
             </div>
-            <div className="experience-image slide-in-right">
+            <div className="experience-image">
               <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cycling Experience" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Route Highlights Section */}
+      <section className="route-section">
+        <div className="container">
+          <div className="section-title">
+            <h2>
+              <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="icon" />
+              Route Highlights
+            </h2>
+            <p>Singapore → Johor → Malacca → Port Dickson → KL city → Lekas Highway ride</p>
+          </div>
+
+          <div className="route-timeline">
+            {routeStops.map((stop, index) => (
+              <div key={index} className="route-point">
+                <div className="point-marker">
+                  <span>{index + 1}</span>
+                </div>
+                <div className="point-content">
+                  <h4>{stop.name}</h4>
+                  <p>{stop.desc}</p>
+                  <span className="point-distance">{stop.km}</span>
+                </div>
+                {index < routeStops.length - 1 && <div className="point-line"></div>}
+              </div>
+            ))}
+          </div>
+
+          <div className="ride-details">
+            <div className="detail-card">
+              <i className="fas fa-tachometer-alt"></i>
+              <h3>Ride Type</h3>
+              <p>Endurance + Adventure + Challenges</p>
+            </div>
+            <div className="detail-card">
+              <i className="fas fa-chart-line"></i>
+              <h3>Difficulty Level</h3>
+              <p>Moderate to Challenging</p>
             </div>
           </div>
         </div>
@@ -138,70 +223,29 @@ const Expedition = () => {
         </div>
       </section>
 
-      {/* Route Highlights */}
-      <section className="route-section">
+      {/* Why This Ride is Special Section */}
+      <section className="special-section">
         <div className="container">
           <div className="section-title">
             <h2>
               <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="icon" />
-              Route Highlights
+              Why This Ride is Special
             </h2>
-            <p>Singapore → Johor → Malacca → Port Dickson → KL city → Lekas Highway ride</p>
           </div>
 
-          <div className="route-timeline">
-            {routeHighlights.map((route, index) => (
-              <div key={index} className="route-point">
-                <div className="point-marker">
-                  <i className={route.icon}></i>
-                </div>
-                <div className="point-content">
-                  <h4>{route.name}</h4>
-                  <p>{route.desc}</p>
-                </div>
-                {index < routeHighlights.length - 1 && <div className="point-line"></div>}
+          <div className="special-grid">
+            {whySpecial.map((item, index) => (
+              <div key={index} className="special-card">
+                <i className="fas fa-star"></i>
+                <span>{item}</span>
               </div>
             ))}
           </div>
-
-          <div className="ride-details">
-            <div className="detail-card">
-              <i className="fas fa-tachometer-alt"></i>
-              <h3>Ride Type</h3>
-              <p>Endurance + Adventure + Challenges</p>
-            </div>
-            <div className="detail-card">
-              <i className="fas fa-chart-line"></i>
-              <h3>Difficulty Level</h3>
-              <p>Moderate to Challenging</p>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Why This Ride is Special */}
-      <section className="special-section">
-        <div className="container">
-          <div className="special-content">
-            <div className="special-text slide-in-left">
-              <h2>Why This Ride is Special</h2>
-              <ul>
-                <li><i className="fas fa-globe-asia"></i> Cross-country cycling experience</li>
-                <li><i className="fas fa-handshake"></i> Ride with international cyclists</li>
-                <li><i className="fas fa-heartbeat"></i> Ideal for endurance riders</li>
-                <li><i className="fas fa-shield-alt"></i> Safe and professionally managed</li>
-                <li><i className="fas fa-ticket-alt"></i> Limited slots</li>
-              </ul>
-            </div>
-            <div className="special-image slide-in-right">
-              <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Special Ride" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Who Should Join */}
-      <section className="who-join">
+      {/* Who Should Join Section */}
+      <section className="who-join-section">
         <div className="container">
           <div className="section-title">
             <h2>
@@ -210,32 +254,53 @@ const Expedition = () => {
             </h2>
           </div>
 
-          <div className="join-grid">
-            <div className="join-card">
+          <div className="who-join-grid">
+            {whoShouldJoin.map((item, index) => (
+              <div key={index} className="who-join-card">
+                <i className="fas fa-user-check"></i>
+                <h3>{item}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tour Details Section */}
+      <section className="tour-details-section" id="booking">
+        <div className="container">
+          <div className="section-title">
+            <h2>
+              <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="icon" />
+              Tour Details
+            </h2>
+          </div>
+
+          <div className="tour-details-grid">
+            <div className="tour-detail-card">
+              <i className="fas fa-clock"></i>
+              <h4>Duration</h4>
+              <p>6 Days / 5 Nights</p>
+            </div>
+            <div className="tour-detail-card">
+              <i className="fas fa-calendar-alt"></i>
+              <h4>Dates</h4>
+              <p>December 15–20, 2024</p>
+            </div>
+            <div className="tour-detail-card">
               <i className="fas fa-users"></i>
-              <h3>Cycling clubs</h3>
-              <p>Perfect for group expeditions</p>
+              <h4>Group Size</h4>
+              <p>Limited (Max 30 Riders)</p>
             </div>
-            <div className="join-card">
-              <i className="fas fa-trophy"></i>
-              <h3>Audax riders</h3>
-              <p>Challenge yourself internationally</p>
-            </div>
-            <div className="join-card">
-              <i className="fas fa-suitcase-rolling"></i>
-              <h3>Adventure travelers</h3>
-              <p>Combine cycling with exploration</p>
-            </div>
-            <div className="join-card">
-              <i className="fas fa-bicycle"></i>
-              <h3>First-time international riders</h3>
-              <p>Fully supported experience</p>
+            <div className="tour-detail-card">
+              <i className="fas fa-route"></i>
+              <h4>Total Distance</h4>
+              <p>450+ km</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials Section */}
       <section className="testimonials-section">
         <div className="container">
           <div className="section-title">
@@ -247,7 +312,7 @@ const Expedition = () => {
 
           <div className="testimonials-grid">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="testimonial-card scale-in" style={{animationDelay: `${index * 0.2}s`}}>
+              <div key={index} className="testimonial-card">
                 <div className="testimonial-image">
                   <img src={testimonial.image} alt={testimonial.name} />
                 </div>
@@ -263,47 +328,20 @@ const Expedition = () => {
         </div>
       </section>
 
-      {/* Tour Details */}
-      <section className="tour-details" id="booking">
-        <div className="container">
-          <div className="details-card">
-            <h2>Tour Details</h2>
-            <div className="details-grid">
-              <div className="detail-item">
-                <i className="fas fa-clock"></i>
-                <div>
-                  <h4>Duration</h4>
-                  <p>To be announced</p>
-                </div>
-              </div>
-              <div className="detail-item">
-                <i className="fas fa-calendar-alt"></i>
-                <div>
-                  <h4>Dates</h4>
-                  <p>To be announced</p>
-                </div>
-              </div>
-              <div className="detail-item">
-                <i className="fas fa-users"></i>
-                <div>
-                  <h4>Group Size</h4>
-                  <p>Limited</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="cta-expedition">
+      {/* Call to Action Section */}
+      <section className="cta-section">
         <div className="container">
           <div className="cta-content">
             <h2>Ready to ride beyond borders?</h2>
             <p>Book your slot now.</p>
-            <button className="btn btn-large" onClick={() => window.location.href = 'mailto:info@flyandride.co'}>
-              <i className="fas fa-envelope"></i> Book Your Slot Now
-            </button>
+            <div className="cta-buttons">
+              <button className="btn btn-large" onClick={() => window.location.href = 'mailto:info@flyandride.co'}>
+                <i className="fas fa-envelope"></i> Book Your Slot Now
+              </button>
+              <button className="btn btn-outline-light" onClick={handleDownload}>
+                <i className="fas fa-download"></i> Download Itinerary
+              </button>
+            </div>
             <div className="contact-info">
               <p><i className="fas fa-envelope"></i> info@flyandride.co</p>
               <p><i className="fas fa-globe"></i> www.flyandride.co</p>

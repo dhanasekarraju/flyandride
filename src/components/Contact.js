@@ -45,7 +45,7 @@ const Contact = () => {
                 </div>
                 <div className="info-content">
                   <h3>Phone</h3>
-                  <a href="tel:8220676765">+91 82206 76765</a>
+                  <a href="tel:8056272736">+91 80562 72736</a>
                 </div>
               </div>
 
@@ -55,7 +55,7 @@ const Contact = () => {
                 </div>
                 <div className="info-content">
                   <h3>WhatsApp</h3>
-                  <a href="https://wa.me/8220676765">+91 82206 76765</a>
+                  <a href="https://wa.me/90039 95909">+91 90039 95909</a>
                 </div>
               </div>
 
@@ -65,7 +65,7 @@ const Contact = () => {
                 </div>
                 <div className="info-content">
                   <h3>Address</h3>
-                  <p>1/451, Anna Street, NATCO COLONY,<br />Kottivakkam, Chennai-600041</p>
+                  <p>125, Sathya Nagar, Padi,<br />Moggapair Road, Chennai-600050</p>
                 </div>
               </div>
 

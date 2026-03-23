@@ -29,7 +29,7 @@ const Footer = () => {
               <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-youtube"></i>
               </a>
-              <a href="https://wa.me/8220676765" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/9003995909" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-whatsapp"></i>
               </a>
               <a href="https://strava.com" target="_blank" rel="noopener noreferrer">
@@ -45,7 +45,7 @@ const Footer = () => {
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/achievements">Achievements</Link></li>
               <li><Link to="/gallery">Gallery</Link></li>
-              <li><Link to="/expedition">Expedition</Link></li>
+              <li><Link to="/tours">Tours</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
@@ -55,11 +55,11 @@ const Footer = () => {
             <ul className="contact-info">
               {/*<li>
                 <i className="fas fa-phone-alt"></i>
-                <a href="tel:8220676765">+91 82206 76765</a>
+                <a href="tel:8056272736">+91 80562 72736</a>
               </li>*/}
               <li>
                 <i className="fab fa-whatsapp"></i>
-                <a href="https://wa.me/8220676765">+91 82206 76765</a>
+                <a href="https://wa.me/9003995909">+91 90039 95909</a>
               </li>
               {/*<li>
                 <i className="fas fa-map-marker-alt"></i>

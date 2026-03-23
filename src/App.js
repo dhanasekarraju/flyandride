@@ -5,6 +5,7 @@ import './App.css';
 // Import all components
 import Home from './components/Home';
 import About from './components/About';
+import Tours from './components/Tours';
 import Achievements from './components/Achievements';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
@@ -37,6 +38,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/tours" element={<Tours />} />
             <Route path="/expedition" element={<Expedition />} />
             <Route path="/achievements" element={<Achievements />} />
             <Route path="/gallery" element={<Gallery />} />
