@@ -18,10 +18,17 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
     setFormData({ name: '', email: '', message: '' });
+  };
+
+  // Social media links - replace with actual links when available
+  const socialLinks = {
+    facebook: "https://www.facebook.com/groups/cyclingyogis",
+    instagram: "https://www.instagram.com/ramanujarmoulana/",
+    youtube: "https://www.youtube.com/@RamanujarMoulana",
+    strava: "https://www.strava.com/athletes/17978156"
   };
 
   return (
@@ -36,16 +43,16 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="contact-info-section slide-in-left">
             <h2>Let's Connect</h2>
-            <p>Have questions about our rides? Want to join our next adventure? Reach out to us!</p>
+            <p>Have questions about our tours? Want to join our next expedition? Reach out to us!</p>
 
             <div className="info-items">
               <div className="info-item">
                 <div className="info-icon">
-                  <i className="fas fa-phone-alt"></i>
+                  <i className="fas fa-envelope"></i>
                 </div>
                 <div className="info-content">
-                  <h3>Phone</h3>
-                  <a href="tel:8056272736">+91 80562 72736</a>
+                  <h3>Email</h3>
+                  <a href="mailto:info@flyandride.co">info@flyandride.co</a>
                 </div>
               </div>
 
@@ -55,27 +62,17 @@ const Contact = () => {
                 </div>
                 <div className="info-content">
                   <h3>WhatsApp</h3>
-                  <a href="https://wa.me/90039 95909">+91 90039 95909</a>
+                  <a href="https://wa.me/918056272736">+91 80562 72736</a>
                 </div>
               </div>
 
               <div className="info-item">
                 <div className="info-icon">
-                  <i className="fas fa-map-marker-alt"></i>
+                  <i className="fas fa-globe"></i>
                 </div>
                 <div className="info-content">
-                  <h3>Address</h3>
-                  <p>125, Sathya Nagar, Padi,<br />Moggapair Road, Chennai-600050</p>
-                </div>
-              </div>
-
-              <div className="info-item">
-                <div className="info-icon">
-                  <i className="fas fa-clock"></i>
-                </div>
-                <div className="info-content">
-                  <h3>Office Hours</h3>
-                  <p>Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 10:00 AM - 4:00 PM</p>
+                  <h3>Website</h3>
+                  <a href="https://www.flyandride.co" target="_blank" rel="noopener noreferrer">www.flyandride.co</a>
                 </div>
               </div>
             </div>
@@ -83,10 +80,42 @@ const Contact = () => {
             <div className="social-connect">
               <h3>Follow Us</h3>
               <div className="social-links">
-                <a href="/" className="social-link"><i className="fab fa-facebook-f"></i></a>
-                <a href="/" className="social-link"><i className="fab fa-instagram"></i></a>
-                <a href="/" className="social-link"><i className="fab fa-youtube"></i></a>
-                <a href="/" className="social-link"><i className="fab fa-strava"></i></a>
+                <a 
+                  href={socialLinks.facebook} 
+                  className="social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow us on Facebook"
+                >
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+                <a 
+                  href={socialLinks.instagram} 
+                  className="social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow us on Instagram"
+                >
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a 
+                  href={socialLinks.youtube} 
+                  className="social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Subscribe to our YouTube channel"
+                >
+                  <i className="fab fa-youtube"></i>
+                </a>
+                <a 
+                  href={socialLinks.strava} 
+                  className="social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow us on Strava"
+                >
+                  <i className="fab fa-strava"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -141,16 +170,6 @@ const Contact = () => {
               )}
             </form>
           </div>
-        </div>
-
-        {/* Map Section */}
-        <div className="map-section scale-in">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d971.5262397046938!2d80.17756771962404!3d13.092534105445726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5263f0422dd895%3A0x5fff908f87307fa0!2sSathya%20Nagar%2C%20Padi%2C%20Chennai%2C%20Tamil%20Nadu%20600050!5e0!3m2!1sen!2sin!4v1774258459432!5m2!1sen!2sin"
-            title="Location Map"
-            allowFullScreen=""
-            loading="lazy"
-          ></iframe>
         </div>
       </div>
     </div>

@@ -31,14 +31,18 @@ const Home = () => {
     const nextBtn = slider.querySelector('.next');
     const prevBtn = slider.querySelector('.prev');
 
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn && prevBtn) {
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+    }
 
     const interval = setInterval(nextSlide, 5000);
     return () => {
       clearInterval(interval);
-      nextBtn.removeEventListener('click', nextSlide);
-      prevBtn.removeEventListener('click', prevSlide);
+      if (nextBtn && prevBtn) {
+        nextBtn.removeEventListener('click', nextSlide);
+        prevBtn.removeEventListener('click', prevSlide);
+      }
     };
   }, []);
 
@@ -47,21 +51,21 @@ const Home = () => {
       title: 'Singapore to Malaysia Coastal Expedition',
       date: 'December 15-20, 2024',
       description: 'Ride across borders - Singapore → Johor → Malacca → Port Dickson → KL City. Join the ultimate international cycling expedition!',
-      image: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-      link: '/expedition'
+      image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&w=1350',
+      link: '/tours'
     },
     {
-      title: 'Cauvery River Trail Ride',
-      date: '24th - 26th January 2026',
-      description: 'Explore the ancient heritage along the Cauvery river with 40+ cyclists',
-      image: 'https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      title: 'Thailand to Malaysia Expedition',
+      date: 'Completed 2023',
+      description: 'Cross-country cycling experience through Southeast Asia',
+      image: 'https://images.unsplash.com/photo-1541625810516-44f1ce894bcd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=compress&cs=tinysrgb&w=1350',
       link: '/gallery'
     },
     {
-      title: 'Bali International Tour',
-      date: '11th - 16th September 2025',
-      description: 'Experience the fusion of Balinese and Indian heritage',
-      image: 'https://images.unsplash.com/photo-1539367625300-6162c8a5c4c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      title: 'Kuala Lumpur to Penang Ride',
+      date: 'Completed 2023',
+      description: 'Experience Malaysia\'s west coast on two wheels',
+      image: 'https://images.unsplash.com/photo-1631087516911-51579e7fc1ba?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=compress&cs=tinysrgb&w=1350',
       link: '/gallery'
     }
   ];
@@ -71,32 +75,32 @@ const Home = () => {
       {/* Hero Slider */}
       <div className="hero-slider" ref={sliderRef}>
         <div className="slide active" style={{
-          backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")'
+          backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://plus.unsplash.com/premium_photo-1661963485383-223be0058b07?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=compress&cs=tinysrgb&w=1350")'
         }}>
           <div className="slide-content fade-in">
-            <h1>Tour of Cape Comorin</h1>
-            <p>Discover the southern tip of India on two wheels</p>
-            <Link to="/gallery" className="btn">Explore Rides</Link>
+            <h1>Singapore to Malaysia</h1>
+            <p>The Ultimate Coastal Cycling Expedition</p>
+            <Link to="/tours" className="btn">Explore Tour</Link>
           </div>
         </div>
 
         <div className="slide" style={{
-          backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1541625602330-2277a4c46182?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")'
+          backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1654091615752-7a6c4ab49856?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=compress&cs=tinysrgb&w=1350")'
         }}>
           <div className="slide-content fade-in">
-            <h1>International Cycling Tour</h1>
-            <p>Cambodia - Angkor Wat Heritage Ride</p>
-            <Link to="/gallery" className="btn">Explore Rides</Link>
+            <h1>Global Cycling Connections</h1>
+            <p>Connect with cycling communities worldwide</p>
+            <Link to="/about" className="btn">Learn More</Link>
           </div>
         </div>
 
         <div className="slide" style={{
-          backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1511994298241-608e28f14fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")'
+          backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1541584285245-c83a93cce0e8?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=compress&cs=tinysrgb&w=1350")'
         }}>
           <div className="slide-content fade-in">
-            <h1>Republic Day Heritage Ride</h1>
-            <p>Celebrate 77th Republic Day with heritage cycling</p>
-            <Link to="/gallery" className="btn">Explore Rides</Link>
+            <h1>Ride Beyond Borders</h1>
+            <p>Explore new countries, ride new routes, meet global cyclists</p>
+            <Link to="/tours" className="btn">View Tours</Link>
           </div>
         </div>
 
@@ -111,33 +115,33 @@ const Home = () => {
         <div className="container">
           <div className="section-title fade-in">
             <h1>
-              <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="icon" />
-              About FLY&RIDE
+              <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="bicycle icon" />
+              About Fly & Ride
             </h1>
-            <p>Pedal through history, culture, and adventure</p>
+            <p>Global cycling travel platform for passionate riders</p>
           </div>
 
           <div className="about-content">
             <div className="about-text slide-in-left">
-              <p>FLY&RIDE is an initiative comprising of passionate cyclists and heritage enthusiasts from various walks of life. Since 2012, we've been organizing heritage rides, publishing books, and curating vintage bicycle exhibitions that celebrate the rich cultural tapestry of our regions.</p>
-              <p>Our rides take you through historic trails, ancient temples, colonial architecture, and scenic landscapes - all while promoting sustainable tourism and healthy living.</p>
+              <p>Fly & Ride is a global cycling travel platform designed for passionate riders who want to take their cycling journeys beyond India. We specialize in international cycling tours, cross-border cycling expeditions, connecting Indian cyclists with global cycling communities, and participating in international cycling events.</p>
+              <p>Our mission is simple: To help cyclists explore the world on two wheels while building meaningful global connections.</p>
               <Link to="/about" className="btn">Know More</Link>
             </div>
             <div className="about-stats slide-in-right">
               <div className="stat-item">
-                <i className="fas fa-trophy"></i>
-                <h3>5+</h3>
-                <p>Awards Won</p>
-              </div>
-              <div className="stat-item">
                 <i className="fas fa-bicycle"></i>
-                <h3>50+</h3>
-                <p>Memorable Rides</p>
+                <h3>4+</h3>
+                <p>International Tours</p>
               </div>
               <div className="stat-item">
-                <i className="fas fa-book"></i>
-                <h3>8</h3>
-                <p>Publications</p>
+                <i className="fas fa-users"></i>
+                <h3>100+</h3>
+                <p>Happy Riders</p>
+              </div>
+              <div className="stat-item">
+                <i className="fas fa-handshake"></i>
+                <h3>5+</h3>
+                <p>Global Partners</p>
               </div>
             </div>
           </div>
@@ -149,10 +153,10 @@ const Home = () => {
         <div className="container">
           <div className="section-title fade-in">
             <h1>
-              <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="icon" />
-              Featured Highlights
+              <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="bicycle icon" />
+              Featured Expeditions
             </h1>
-            <p>Experience our most memorable journeys</p>
+            <p>Experience the world on two wheels</p>
           </div>
 
           <div className="highlights-grid">
@@ -165,7 +169,7 @@ const Home = () => {
                   <h3>{highlight.title}</h3>
                   <p className="date">{highlight.date}</p>
                   <p className="description">{highlight.description}</p>
-                  <Link to="/gallery" className="btn-small">View Gallery</Link>
+                  <Link to={highlight.link} className="btn-small">Learn More <i className="fas fa-bicycle"></i></Link>
                 </div>
               </div>
             ))}
@@ -177,9 +181,9 @@ const Home = () => {
       <section className="cta-section">
         <div className="container">
           <div className="cta-content scale-in">
-            <h2>Ready for an Adventure?</h2>
-            <p>Join our next heritage ride and discover the beauty of cycling through history</p>
-            <Link to="/contact" className="btn">Book Your Ride</Link>
+            <h2>Ready to ride beyond borders?</h2>
+            <p>Join the global cycling movement. Explore new countries, ride new routes, and meet cyclists from around the world.</p>
+            <Link to="/contact" className="btn">Start Your Journey <i className="fas fa-bicycle"></i></Link>
           </div>
         </div>
       </section>

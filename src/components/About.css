@@ -1,81 +1,580 @@
 .about-page {
-  padding: 50px 0;
   background: var(--bg-color);
+  overflow-x: hidden;
 }
 
-.page-header {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
+/* Hero Section */
+.about-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  overflow: hidden;
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+  opacity: 0.2;
+  animation: zoomBackground 20s ease-in-out infinite;
+}
+
+@keyframes zoomBackground {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+}
+
+.hero-content {
+  position: relative;
   text-align: center;
-  padding: 80px 20px;
-  margin-bottom: 50px;
+  color: white;
+  padding: 100px 20px;
 }
 
-.page-header h1 {
-  font-size: 3rem;
+.hero-content h1 {
+  font-size: 3.5rem;
   font-weight: 800;
-  animation: fadeInUp 1s ease;
+  margin-bottom: 20px;
 }
 
-.about-content {
-  /*max-width: 800px;*/
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 700px;
   margin: 0 auto;
+  opacity: 0.9;
 }
 
-.about-text h2 {
-  color: var(--text-color);
-  margin: 30px 0 15px;
+/* Mission Section */
+.mission-section {
+  padding: 80px 0;
+  background: var(--surface-color);
 }
 
-.about-text p {
-  color: var(--text-secondary);
-  line-height: 1.8;
-  font-size: 1.1rem;
-}
-
-.stats-grid {
+.mission-content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin: 50px 0;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.mission-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.mission-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.mission-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.mission-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .stat-card {
   text-align: center;
   padding: 30px;
-  background: var(--surface-color);
-  border-radius: var(--border-radius);
+  background: var(--bg-color);
+  border-radius: 20px;
   box-shadow: var(--shadow);
   transition: var(--transition);
 }
 
 .stat-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-hover);
 }
 
 .stat-card i {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  margin-bottom: 15px;
+  font-size: 2rem;
+  color: #ff6b4a;
+  margin-bottom: 10px;
 }
 
 .stat-card h3 {
   font-size: 2rem;
+  font-weight: 800;
   color: var(--text-color);
   margin-bottom: 5px;
 }
 
 .stat-card p {
   color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* What We Do Section */
+.whatwedo-section {
+  padding: 80px 0;
+  background: var(--bg-color);
+}
+
+.whatwedo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.whatwedo-card {
+  text-align: center;
+  padding: 40px 30px;
+  background: var(--surface-color);
+  border-radius: 20px;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.whatwedo-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #ff6b4a20, #4a90e220);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon i {
+  font-size: 2rem;
+  color: #ff6b4a;
+}
+
+.whatwedo-card h3 {
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.whatwedo-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Journey Section */
+.journey-section {
+  padding: 80px 0;
+  background: var(--surface-color);
+}
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.journey-card {
+  background: var(--bg-color);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.journey-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.journey-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.journey-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.journey-card:hover .journey-image img {
+  transform: scale(1.1);
+}
+
+.journey-year {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #ff6b4a, #4a90e2);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.journey-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.journey-content h3 {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+/* Upcoming Highlight */
+.upcoming-highlight {
+  padding: 80px 0;
+  background: var(--bg-color);
+}
+
+.highlight-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  background: linear-gradient(135deg, #ff6b4a10, #4a90e210);
+  border-radius: 30px;
+  padding: 50px;
+}
+
+.highlight-text h2 {
+  font-size: 1.2rem;
+  color: #ff6b4a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.highlight-text h3 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: var(--text-color);
+}
+
+.highlight-features {
+  margin-bottom: 30px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  color: var(--text-secondary);
+}
+
+.feature i {
+  color: #4caf50;
+  font-size: 1.1rem;
+}
+
+.highlight-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: var(--shadow-hover);
+}
+
+/* Why Choose Us */
+.whyus-section {
+  padding: 80px 0;
+  background: var(--surface-color);
+}
+
+.whyus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.whyus-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: var(--bg-color);
+  border-radius: 15px;
+  transition: var(--transition);
+}
+
+.whyus-card:hover {
+  transform: translateX(5px);
+  background: linear-gradient(135deg, #ff6b4a10, #4a90e210);
+}
+
+.whyus-card i {
+  font-size: 1.5rem;
+  color: #4caf50;
+}
+
+.whyus-card span {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* Who Is This For */
+.who-section {
+  padding: 80px 0;
+  background: var(--bg-color);
+}
+
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.who-card {
+  text-align: center;
+  padding: 40px 30px;
+  background: var(--surface-color);
+  border-radius: 20px;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.who-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.who-card i {
+  font-size: 2.5rem;
+  color: #ff6b4a;
+  margin-bottom: 20px;
+}
+
+.who-card h3 {
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.who-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Partner Section */
+.partner-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: white;
+  text-align: center;
+}
+
+.partner-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.partner-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-outline-light {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-outline-light:hover {
+  background: white;
+  color: #ff6b4a;
+  transform: translateY(-3px);
+}
+
+/* Movement Section */
+.movement-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #ff6b4a, #4a90e2);
+  color: white;
+  text-align: center;
+}
+
+.movement-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.movement-content p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.movement-desc {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.btn-large {
+  padding: 15px 40px;
+  font-size: 1.1rem;
+}
+
+/* Section Title */
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-color);
+  margin-bottom: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-title h2 img {
+  width: 40px;
+  height: 40px;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.section-title p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #ff6b4a, #4a90e2);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scale-in {
+  animation: scaleIn 0.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .whatwedo-grid,
+  .journey-grid,
+  .who-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
-  .page-header h1 {
+  .hero-content h1 {
     font-size: 2rem;
   }
-
-  .stats-grid {
+  
+  .mission-content,
+  .highlight-content {
     grid-template-columns: 1fr;
+  }
+  
+  .whatwedo-grid,
+  .journey-grid,
+  .who-grid,
+  .mission-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+  
+  .highlight-text h3 {
+    font-size: 1.5rem;
+  }
+  
+  .partner-content h2,
+  .movement-content h2 {
+    font-size: 1.8rem;
   }
 }

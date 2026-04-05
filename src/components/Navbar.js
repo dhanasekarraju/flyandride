@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
@@ -28,16 +28,18 @@ const Navbar = ({ theme, toggleTheme }) => {
     { path: '/contact', name: 'Contact' },
   ];
 
+  const logoSrc = "/fly-logo_trans.png";
+
   return (
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           <NavLink to="/" className="logo">
             <img 
-              src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" 
-              alt="FLY&RIDE Logo"
+              src={logoSrc}
+              alt="FLY&RIDE"
+              className="logo-img"
             />
-            <span>FLY&RIDE</span>
           </NavLink>
 
           <div className={`nav-menu ${mobileMenuOpen ? 'active' : ''}`}>

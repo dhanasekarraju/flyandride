@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Tours.css';
 
 const Tours = () => {
   const [activeTab, setActiveTab] = useState('upcoming');
   const [selectedTour, setSelectedTour] = useState(null);
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const upcomingTours = [
     {
@@ -55,11 +60,11 @@ const Tours = () => {
         { name: "KL City", desc: "Urban adventure through Malaysia's vibrant capital", distance: "100 km" },
         { name: "Lekas Highway", desc: "Challenging climbs and breathtaking mountain views", distance: "50 km" }
       ],
-      image: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      image: "https://images.unsplash.com/photo-1681295686960-47d87abb484c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80",
       tag: "Limited Slots Available",
       featured: true
     },
-    /*{
+    {
       id: 2,
       title: "Cauvery River Trail Heritage Ride",
       subtitle: "Explore Ancient Heritage",
@@ -95,10 +100,10 @@ const Tours = () => {
         "Rice Terraces",
         "Cultural Experience"
       ],
-      image: "https://images.unsplash.com/photo-1539367625300-6162c8a5c4c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      image: "https://images.unsplash.com/photo-1541625810516-44f1ce894bcd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80",
       tag: "International Tour",
       featured: false
-    }*/
+    }
   ];
 
   const pastTours = [
@@ -156,7 +161,7 @@ const Tours = () => {
               className={`tab-btn ${activeTab === 'upcoming' ? 'active' : ''}`}
               onClick={() => setActiveTab('upcoming')}
             >
-              <i className="fas fa-calendar-alt"></i> Upcoming Tours
+              <i className="fas fa-bicycle"></i> Upcoming Tours
             </button>
             <button 
               className={`tab-btn ${activeTab === 'past' ? 'active' : ''}`}
@@ -277,7 +282,7 @@ const Tours = () => {
         </section>
       )}
 
-      {/* Tour Details Modal - FULL DETAILS for Singapore Expedition */}
+      {/* Tour Details Modal */}
       {selectedTour && (
         <div className="tour-modal" onClick={() => setSelectedTour(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -332,7 +337,7 @@ const Tours = () => {
 
                 {/* Experience */}
                 <div className="experience-modal">
-                  <h4><i className="fas fa-info-circle"></i> Experience</h4>
+                  <h4><i className="fas fa-bicycle"></i> Experience</h4>
                   <p>This is not just a ride — it's an international cycling experience. Ride through Singapore's cycling infrastructure, cross into Malaysia, enjoy coastal highways, and experience new cultures and cycling communities.</p>
                 </div>
 

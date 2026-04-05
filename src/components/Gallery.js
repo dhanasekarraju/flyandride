@@ -5,47 +5,47 @@ const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState('republic');
 
   const categories = [
-    { id: 'republic', name: 'Republic Day Rides' },
-    { id: 'world', name: 'World Heritage Day' },
-    { id: 'madras', name: 'Madras Day' },
-    { id: 'books', name: 'Book Launches' }
+    { id: 'republic', name: 'Republic Day Rides', icon: 'fas fa-bicycle' },
+    { id: 'world', name: 'World Heritage Day', icon: 'fas fa-bicycle' },
+    { id: 'madras', name: 'Madras Day', icon: 'fas fa-bicycle' },
+    { id: 'books', name: 'Book Launches', icon: 'fas fa-book' }
   ];
 
   const galleryImages = {
     republic: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1541625602330-2277a4c46182?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        url: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&w=1350',
         title: 'Republic Day Ride 2023',
         location: 'Ponniyin Selvan Trail, Thanjavur'
       },
       {
         id: 2,
-        url: 'https://images.unsplash.com/photo-1511994298241-608e28f14fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        url: 'https://images.unsplash.com/photo-1643603424193-9096f539e1ff?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=compress&cs=tinysrgb&w=1350',
         title: 'Republic Day Ride 2022',
         location: 'Sethunadu Heritage Trail'
       },
       {
         id: 3,
-        url: 'https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        url: 'https://images.unsplash.com/photo-1643603423897-d42054c25c84?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=compress&cs=tinysrgb&w=1350',
         title: 'Republic Day Ride 2021',
         location: 'Tirunelveli Temple Trail'
       },
       {
         id: 4,
-        url: 'https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        url: 'https://images.unsplash.com/photo-1659453851872-1a46077b0249?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=compress&cs=tinysrgb&w=1350',
         title: 'Republic Day Ride 2020',
         location: 'Navagraha Temples, Kumbakonam'
       },
       {
         id: 5,
-        url: 'https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        url: 'https://images.unsplash.com/photo-1739461226207-4351ca1485ff?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=compress&cs=tinysrgb&w=1350',
         title: 'Republic Day Ride 2019',
         location: 'Kanchipuram Heritage Ride'
       },
       {
         id: 6,
-        url: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        url: 'https://images.pexels.com/photos/1210644/pexels-photo-1210644.jpeg?auto=compress&cs=tinysrgb&w=1350',
         title: 'Republic Day Ride 2018',
         location: 'Gingee Fort Expedition'
       }
@@ -53,25 +53,25 @@ const Gallery = () => {
     world: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        url: 'https://images.pexels.com/photos/1591160/pexels-photo-1591160.jpeg?auto=compress&cs=tinysrgb&w=1350',
         title: 'World Heritage Day 2022',
         location: 'Dakshinachitra Museum'
       },
       {
         id: 2,
-        url: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        url: 'https://lh3.googleusercontent.com/gps-cs-s/AHVAwerwNAD2BTERg7TT0aD8SfU-_czp3Pg9Mk7nKoXBXG4G5gLSTbjqrhFUsbHVAGvdj-XWqJmAmdbST70pCFRkh5IU0aoXDIrKpdXW5H5zDe4yQ6PtLMKy61GWs5GQivegSsEfbB0S=s680-w680-h510-rw?auto=compress&cs=tinysrgb&w=1350',
         title: '10th Anniversary Ride',
         location: 'Dakshinachitra Heritage Museum'
       },
       {
         id: 3,
-        url: 'https://images.unsplash.com/photo-1518391846015-55a9cc003b25?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        url: 'https://images.timesproperty.com/blog/5271/TP_iStock_1256834892_ss_4.jpg?auto=compress&cs=tinysrgb&w=1350',
         title: 'OMR ECR Book Launch 2019',
         location: 'Dakshinachitra'
       },
       {
         id: 4,
-        url: 'https://images.unsplash.com/photo-1536697246787-1f7ae568d89a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        url: 'https://images.pexels.com/photos/1267449/pexels-photo-1267449.jpeg?auto=compress&cs=tinysrgb&w=1350',
         title: 'World Heritage Day 2018',
         location: 'Dakshinachitra Museum'
       }
@@ -79,19 +79,19 @@ const Gallery = () => {
     madras: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        url: 'https://www.tamilnadutourism.com/images/chennai/card/marina-beach.webp?auto=compress&cs=tinysrgb&w=1350',
         title: 'Madras Day 2018',
         location: 'Thirukazhukundram'
       },
       {
         id: 2,
-        url: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmo3g0ZoJsWRmx6OHGBdgn-B9xVkunICWAtQ&s?auto=compress&cs=tinysrgb&w=1350',
         title: 'Madras Day 2017',
         location: 'Adyar River Trail'
       },
       {
         id: 3,
-        url: 'https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        url: 'https://img-cdn.publive.online/fit-in/1000x675/local-samosal/media/media_files/pfFFVLpBH6L4BBr5QGiH.png?auto=compress&cs=tinysrgb&w=700',
         title: 'Madras Day 2016',
         location: 'Sadras Fort'
       }
@@ -124,7 +124,7 @@ const Gallery = () => {
     <div className="gallery-page">
       <div className="page-header">
         <h1 className="fade-in">Our Gallery</h1>
-        <p className="fade-in">Capturing moments from our memorable rides</p>
+        <p className="fade-in">Capturing moments from our memorable cycling journeys</p>
       </div>
 
       <div className="container">
@@ -136,7 +136,7 @@ const Gallery = () => {
               className={`filter-btn ${activeCategory === category.id ? 'active' : ''}`}
               onClick={() => setActiveCategory(category.id)}
             >
-              {category.name}
+              <i className={category.icon}></i> {category.name}
             </button>
           ))}
         </div>
@@ -155,7 +155,7 @@ const Gallery = () => {
                 <h3>{image.title}</h3>
                 <p>{image.location}</p>
                 <span className="view-btn">
-                  <i className="fas fa-search-plus"></i>
+                  <i className="fas fa-bicycle"></i>
                 </span>
               </div>
             </div>

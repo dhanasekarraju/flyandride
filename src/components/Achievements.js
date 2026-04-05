@@ -7,7 +7,7 @@ const Achievements = () => {
   const publications = [
     {
       title: "Sufi Trail of Madras",
-      image: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      image: "https://images.unsplash.com/photo-1661366698983-3cb843219300?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80",
       link: "#"
     },
     {
@@ -17,7 +17,7 @@ const Achievements = () => {
     },
     {
       title: "Madras by Cycle 40 Trails",
-      image: "https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      image: "https://images.unsplash.com/photo-1681617819600-70ae9ab1a8eb?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80",
       link: "#"
     },
     {
@@ -59,19 +59,19 @@ const Achievements = () => {
     {
       title: "Tamil Nadu Tourism Award",
       year: "2022",
-      description: "Outstanding Contribution to Promotion of Tourism",
+      description: "Outstanding Contribution to Promotion of Cycling Tourism",
       icon: "fas fa-trophy"
     },
     {
-      title: "Heritage Conservation Award",
+      title: "Heritage Cycling Award",
       year: "2021",
-      description: "For preserving cycling heritage through vintage exhibitions",
+      description: "For preserving cycling heritage through vintage bicycle exhibitions",
       icon: "fas fa-award"
     },
     {
       title: "Best Cycling Community",
       year: "2020",
-      description: "Recognized by Department of Tourism",
+      description: "Recognized by Department of Tourism for promoting cycling culture",
       icon: "fas fa-medal"
     }
   ];
@@ -106,7 +106,7 @@ const Achievements = () => {
         <section className="awards-section">
           <div className="section-title">
             <h2>
-              <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="icon" />
+              <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="bicycle icon" />
               Our Awards
             </h2>
           </div>
@@ -128,7 +128,7 @@ const Achievements = () => {
         <section className="publications-section">
           <div className="section-title">
             <h2>
-              <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="icon" />
+              <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="bicycle icon" />
               Our Publications
             </h2>
           </div>
@@ -138,7 +138,7 @@ const Achievements = () => {
                 <div className="card-image">
                   <img src={pub.image} alt={pub.title} />
                   <div className="card-actions">
-                    <a href={pub.link} className="btn-small">Buy Now</a>
+                    <a href={pub.link} className="btn-small">Buy Now <i className="fas fa-bicycle"></i></a>
                   </div>
                 </div>
                 <div className="card-content">
@@ -154,8 +154,8 @@ const Achievements = () => {
                 <div key={index} className="publication-card scale-in">
                   <div className="card-image">
                     <img src={pub.image} alt={pub.title} />
-                    <div className="card-overlay">
-                      <a href={pub.link} className="btn-small">Buy Now</a>
+                    <div className="card-actions">
+                      <a href={pub.link} className="btn-small">Buy Now <i className="fas fa-bicycle"></i></a>
                     </div>
                   </div>
                   <div className="card-content">
@@ -168,7 +168,7 @@ const Achievements = () => {
 
           <div className="load-more">
             <button className="btn" onClick={() => setShowMore(!showMore)}>
-              {showMore ? 'Show Less' : 'Read More'}
+              {showMore ? 'Show Less' : 'Read More'} <i className="fas fa-bicycle"></i>
             </button>
           </div>
         </section>
@@ -177,7 +177,7 @@ const Achievements = () => {
         <section className="exhibition-section">
           <div className="section-title">
             <h2>
-              <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="icon" />
+              <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="bicycle icon" />
               Vintage Bicycle Exhibitions
             </h2>
           </div>

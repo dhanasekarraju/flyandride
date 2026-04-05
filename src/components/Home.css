@@ -378,3 +378,37 @@
   }
 }
 
+/* Ensure all icons are bicycle-themed */
+.stat-item i,
+.feature i,
+.highlight-card .btn-small i,
+.cta-content .btn i {
+  transition: var(--transition);
+}
+
+.stat-item:hover i {
+  transform: rotate(15deg);
+}
+
+.highlight-card .btn-small i {
+  margin-left: 5px;
+}
+
+.cta-content .btn i {
+  margin-left: 8px;
+}
+
+/* Add cycling-inspired animations */
+@keyframes pedal {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg); }
+}
+
+.stat-item i.fa-bicycle:hover {
+  animation: pedal 0.5s ease;
+}
+
+/* Cycling-themed hover effects */
+.highlight-card:hover .btn-small i {
+  transform: translateX(5px);
+}
