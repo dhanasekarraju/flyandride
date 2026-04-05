@@ -87,7 +87,18 @@ body {
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
-  filter: brightness(1.1);
+  filter: brightness(1.05);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline:hover {
+  background: var(--primary-color);
+  color: white;
 }
 
 .btn-small {
@@ -108,7 +119,6 @@ body {
 .btn-small:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
-  filter: brightness(1.1);
 }
 
 .section-title {
@@ -140,15 +150,57 @@ body {
 .section-title p {
   color: var(--text-secondary);
   font-size: 1.1rem;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
+/* Page Header */
+.page-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+  opacity: 0.1;
+  animation: zoomBackground 20s linear infinite;
+}
+
+@keyframes zoomBackground {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.page-header h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  position: relative;
+  animation: fadeInUp 1s ease;
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  position: relative;
+  animation: fadeInUp 1s ease 0.2s both;
+}
+
 /* Animations */
-@keyframes fadeIn {
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -157,7 +209,7 @@ body {
 }
 
 .fade-in {
-  animation: fadeIn 0.8s ease forwards;
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 .slide-in-left {
@@ -235,5 +287,13 @@ body {
   .btn {
     padding: 10px 20px;
     font-size: 0.9rem;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .page-header p {
+    font-size: 1rem;
   }
 }
