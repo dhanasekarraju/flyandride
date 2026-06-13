@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Tours.css';
+import { tourImages } from '../data/season1Images';
 
 const Tours = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -17,7 +18,7 @@ const Tours = () => {
         "Fully supported ride"
       ],
       idealFor: "Intermediate to advanced cyclists",
-      image: "https://images.unsplash.com/photo-1563990308267-cd6d3cc09318?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=compress&cs=tinysrgb&w=1350",
+      image: tourImages.malaysiaThailand2025,
       date: "2025",
       duration: "8 Days"
     },
@@ -31,7 +32,7 @@ const Tours = () => {
         "Strong community vibe"
       ],
       idealFor: "All levels",
-      image: "https://images.unsplash.com/photo-1629107953246-944554aa9741?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: tourImages.lekas2024,
       date: "2024",
       duration: "2 Days"
     },
@@ -45,7 +46,7 @@ const Tours = () => {
         "Professional support"
       ],
       idealFor: "All riders",
-      image: "https://images.unsplash.com/photo-1623756584910-a59444f25614?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: tourImages.lekas2025,
       date: "2025",
       duration: "2 Days"
     },
@@ -59,7 +60,7 @@ const Tours = () => {
         "Coastal views"
       ],
       idealFor: "Leisure and scenic riders",
-      image: "https://plus.unsplash.com/premium_photo-1684274186190-92c72bc48130?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: tourImages.penang2026,
       date: "2026",
       duration: "3 Days"
     },
@@ -73,7 +74,7 @@ const Tours = () => {
         "Low traffic roads"
       ],
       idealFor: "Nature lovers",
-      image: "https://images.unsplash.com/photo-1759503614480-ea2b140bda2e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: tourImages.sabah2026,
       date: "2026",
       duration: "5 Days"
     }
@@ -85,7 +86,7 @@ const Tours = () => {
       title: "Singapore to Malaysia Coastal Cycling Expedition",
       date: "September 2026",
       description: "A coastal cross-border ride with scenic routes and full support.",
-      image: "https://plus.unsplash.com/premium_photo-1748191472214-757549cdfa65?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: tourImages.singaporeMalaysia2026,
       duration: "6 Days",
       highlights: ["Coastal route", "Cross-border", "Full support"]
     },
@@ -94,7 +95,7 @@ const Tours = () => {
       title: "Malaysia Pink Ride Audax 200BRM",
       date: "2027",
       description: "A 200km endurance ride with checkpoints and community participation.",
-      image: "https://images.unsplash.com/photo-1761796995655-bef1f14fc8c3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: tourImages.pinkRide2027,
       duration: "1 Day",
       highlights: ["200km endurance", "Checkpoints", "Community event"]
     }

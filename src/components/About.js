@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './About.css';
+import { aboutTourImages, season1 } from '../data/season1Images';
 
 const About = () => {
   const whatWeDo = [
@@ -11,10 +12,10 @@ const About = () => {
   ];
 
   const completedTours = [
-    { title: "Thailand to Malaysia Expedition", year: "2023", image: "https://images.unsplash.com/photo-1631087516911-51579e7fc1ba?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80" },
-    { title: "Kuala Lumpur to Penang Ride", year: "2023", image: "https://images.unsplash.com/photo-1681295687436-78b4afef764a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80" },
-    { title: "Malaysia Multi-City Cycling Tours", year: "2024", image: "https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" },
-    { title: "Asian Cycling Experiences", year: "2024", image: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" }
+    { title: "Thailand to Malaysia Expedition", year: "2023", image: aboutTourImages[0].image },
+    { title: "Kuala Lumpur to Penang Ride", year: "2023", image: aboutTourImages[1].image },
+    { title: "Malaysia Multi-City Cycling Tours", year: "2024", image: aboutTourImages[2].image },
+    { title: "Asian Cycling Experiences", year: "2024", image: aboutTourImages[3].image }
   ];
 
   const whyChooseUs = [
@@ -122,7 +123,7 @@ const About = () => {
           <div className="journey-grid">
             {completedTours.map((tour, index) => (
               <div key={index} className="journey-card">
-                <div className="journey-image">
+                <div className={`journey-image${tour.orientation === 'portrait' ? ' journey-image-portrait' : ''}`}>
                   <img src={tour.image} alt={tour.title} />
                   <div className="journey-year">{tour.year}</div>
                 </div>
@@ -152,7 +153,7 @@ const About = () => {
               <Link to="/tours" className="btn" onClick={handleTourClick}>View Tour Details <i className="fas fa-arrow-right"></i></Link>
             </div>
             <div className="highlight-image">
-              <img src="https://images.unsplash.com/photo-1681295686960-47d87abb484c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80" alt="Singapore to Malaysia Cycling Expedition" />
+              <img src={season1('img_1224', 'full')} alt="Singapore to Malaysia Cycling Expedition" />
             </div>
           </div>
         </div>

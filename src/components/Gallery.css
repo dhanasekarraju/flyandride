@@ -20,7 +20,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('https://images.unsplash.com/photo-1511994298241-608e28f14fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+  background: url('../../public/images/season1/img_0304-full.jpg') center/cover;
   opacity: 0.1;
   animation: slideBackground 20s linear infinite;
 }
@@ -100,9 +100,10 @@
 /* Gallery Grid */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 25px;
   padding: 20px 0;
+  align-items: start;
 }
 
 .gallery-item {
@@ -110,9 +111,25 @@
   border-radius: var(--border-radius);
   overflow: hidden;
   cursor: pointer;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 3;
   box-shadow: var(--shadow);
   transition: var(--transition);
+}
+
+.gallery-item.portrait {
+  aspect-ratio: 3 / 4;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: var(--transition);
+}
+
+.gallery-item.portrait img {
+  object-position: center top;
 }
 
 .gallery-item:hover {
@@ -120,15 +137,26 @@
   box-shadow: var(--shadow-hover);
 }
 
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: var(--transition);
+.gallery-item:hover img {
+  transform: scale(1.05);
 }
 
-.gallery-item:hover img {
-  transform: scale(1.1);
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-hover);
+}
+
+.lightbox-content.portrait img {
+  max-height: 85vh;
+  max-width: min(90vw, 520px);
+  width: auto;
+  height: auto;
+}
+
+.lightbox-content.portrait .lightbox-info {
+  bottom: -70px;
 }
 
 .gallery-overlay {
@@ -214,11 +242,15 @@
   animation: scaleIn 0.3s ease;
 }
 
-.lightbox-content img {
-  max-width: 100%;
-  max-height: 80vh;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-hover);
+.lightbox-content.portrait img {
+  max-height: 85vh;
+  max-width: min(90vw, 520px);
+  width: auto;
+  height: auto;
+}
+
+.lightbox-content.portrait .lightbox-info {
+  bottom: -70px;
 }
 
 .lightbox-info {

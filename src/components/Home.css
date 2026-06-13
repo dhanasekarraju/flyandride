@@ -185,6 +185,20 @@
   box-shadow: var(--shadow-hover);
 }
 
+.slide-portrait {
+  background-size: cover;
+  background-position: center top;
+}
+
+.highlight-card .card-image-portrait {
+  height: 320px;
+}
+
+.highlight-card .card-image-portrait img {
+  object-fit: cover;
+  object-position: center top;
+}
+
 .card-image {
   position: relative;
   height: 250px;

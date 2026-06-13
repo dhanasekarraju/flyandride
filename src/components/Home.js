@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import { heroSlides, featuredExpeditions } from '../data/season1Images';
 
 const Home = () => {
   const sliderRef = useRef(null);
@@ -51,58 +52,50 @@ const Home = () => {
       title: 'Singapore to Malaysia Coastal Expedition',
       date: 'December 15-20, 2024',
       description: 'Ride across borders - Singapore → Johor → Malacca → Port Dickson → KL City. Join the ultimate international cycling expedition!',
-      image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&w=1350',
+      image: featuredExpeditions[0].image,
+      orientation: featuredExpeditions[0].orientation,
       link: '/tours'
     },
     {
       title: 'Thailand to Malaysia Expedition',
       date: 'Completed 2023',
       description: 'Cross-country cycling experience through Southeast Asia',
-      image: 'https://images.unsplash.com/photo-1541625810516-44f1ce894bcd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=compress&cs=tinysrgb&w=1350',
+      image: featuredExpeditions[1].image,
+      orientation: featuredExpeditions[1].orientation,
       link: '/gallery'
     },
     {
       title: 'Kuala Lumpur to Penang Ride',
       date: 'Completed 2023',
       description: 'Experience Malaysia\'s west coast on two wheels',
-      image: 'https://images.unsplash.com/photo-1631087516911-51579e7fc1ba?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=compress&cs=tinysrgb&w=1350',
+      image: featuredExpeditions[2].image,
+      orientation: featuredExpeditions[2].orientation,
       link: '/gallery'
     }
   ];
+
+  const slideLinks = ['/tours', '/about', '/tours'];
+  const slideButtons = ['Explore Tour', 'Learn More', 'View Tours'];
 
   return (
     <div className="home">
       {/* Hero Slider */}
       <div className="hero-slider" ref={sliderRef}>
-        <div className="slide active" style={{
-          backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://plus.unsplash.com/premium_photo-1661963485383-223be0058b07?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=compress&cs=tinysrgb&w=1350")'
-        }}>
-          <div className="slide-content fade-in">
-            <h1>Singapore to Malaysia</h1>
-            <p>The Ultimate Coastal Cycling Expedition</p>
-            <Link to="/tours" className="btn">Explore Tour</Link>
+        {heroSlides.map((slide, index) => (
+          <div
+            key={slide.title}
+            className={`slide${index === 0 ? ' active' : ''}${slide.orientation === 'portrait' ? ' slide-portrait' : ''}`}
+            style={{
+              backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("${slide.image}")`
+            }}
+          >
+            <div className="slide-content fade-in">
+              <h1>{slide.title}</h1>
+              <p>{slide.subtitle}</p>
+              <Link to={slideLinks[index]} className="btn">{slideButtons[index]}</Link>
+            </div>
           </div>
-        </div>
-
-        <div className="slide" style={{
-          backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1654091615752-7a6c4ab49856?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=compress&cs=tinysrgb&w=1350")'
-        }}>
-          <div className="slide-content fade-in">
-            <h1>Global Cycling Connections</h1>
-            <p>Connect with cycling communities worldwide</p>
-            <Link to="/about" className="btn">Learn More</Link>
-          </div>
-        </div>
-
-        <div className="slide" style={{
-          backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1541584285245-c83a93cce0e8?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=compress&cs=tinysrgb&w=1350")'
-        }}>
-          <div className="slide-content fade-in">
-            <h1>Ride Beyond Borders</h1>
-            <p>Explore new countries, ride new routes, meet global cyclists</p>
-            <Link to="/tours" className="btn">View Tours</Link>
-          </div>
-        </div>
+        ))}
 
         <div className="slider-nav">
           <button className="prev"><i className="fas fa-chevron-left"></i></button>
@@ -162,7 +155,7 @@ const Home = () => {
           <div className="highlights-grid">
             {highlights.map((highlight, index) => (
               <div key={index} className="highlight-card scale-in" style={{ animationDelay: `${index * 0.2}s` }}>
-                <div className="card-image">
+                <div className={`card-image${highlight.orientation === 'portrait' ? ' card-image-portrait' : ''}`}>
                   <img src={highlight.image} alt={highlight.title} />
                 </div>
                 <div className="card-content">

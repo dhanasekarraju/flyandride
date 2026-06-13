@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './Expedition.css';
+import { season1 } from '../data/season1Images';
 
 const Expedition = () => {
   const [isDownloading, setIsDownloading] = useState(false);
@@ -152,7 +153,7 @@ const Expedition = () => {
               <p>Ride through Singapore's cycling infrastructure, cross into Malaysia, enjoy coastal highways, and experience new cultures and cycling communities.</p>
             </div>
             <div className="experience-image">
-              <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cycling Experience" />
+              <img src={season1('img_1818', 'full')} alt="Cycling Experience" />
             </div>
           </div>
         </div>
